@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vikram & Betal</title>
+<link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+<header>
+  <div class="who"><img src="icons/icon32.png" alt="" width="22" height="22"><b>Vikram</b><span>with Betal on his back</span></div>
+  <button id="gear" title="Settings">Settings</button>
+</header>
+
+<div class="chips">
+  <button data-act="page">Summarize page</button>
+  <button data-act="qr">Scan QR on screen</button>
+  <button data-act="sel">Use selection</button>
+  <button data-act="clear">Clear</button>
+</div>
+
+<main id="log">
+  <div class="empty">Highlight text on any page, or ask below. Vikram answers. Betal has opinions about Vikram.</div>
+</main>
+
+<form id="form">
+  <textarea id="input" rows="1" placeholder="Ask Vikram anything…"></textarea>
+  <button type="submit">Send</button>
+</form>
+
+<dialog id="settings">
+  <h3>Settings</h3>
+  <label>Provider
+    <select id="provider">
+      <option value="gemini">Google Gemini (free tier)</option>
+      <option value="grok">xAI Grok</option>
+      <option value="anthropic">Anthropic Claude</option>
+    </select>
+  </label>
+  <label>API key<input id="apiKey" type="password" placeholder="Paste key"></label>
+  <label>Vikram model<input id="model"></label>
+  <label>Betal model<input id="betalModel"></label>
+  <label class="row"><input id="betal" type="checkbox"> Let Betal heckle</label>
+  <p class="hint">Your key stays in this browser (chrome.storage.local) and is only sent to the provider you pick.</p>
+  <div class="row end"><button id="cancel" type="button">Cancel</button><button id="save" type="button">Save</button></div>
+</dialog>
+
+<script src="lib/jsQR.js"></script>
+<script src="llm.js"></script>
+<script src="sidepanel.js"></script>
+</body>
+</html>
